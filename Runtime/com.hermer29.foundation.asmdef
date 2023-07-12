@@ -1,0 +1,14 @@
+{
+    "name": "com.hermer29.foundation",
+    "rootNamespace": "Hermer29.Foundation",
+    "references": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

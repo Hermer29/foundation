@@ -1,0 +1,9 @@
+{
+  "name": "com.hermer29.foundation",
+  "version": "1.0.0",
+  "displayName": "Foundation",
+  "type": "library",
+  "description": "Organizes the relevance of data and provides an interface for interacting with them",
+  "license": "MIT",
+  "samples": []
+}
