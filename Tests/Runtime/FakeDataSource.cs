@@ -26,5 +26,10 @@ namespace Tests.Runtime
         {
             return JsonUtility.ToJson(Record);
         }
+
+        public void Save()
+        {
+            
+        }
     }
 }

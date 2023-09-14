@@ -82,5 +82,15 @@ namespace Hermer29.Foundation
             SavedRecord record = GetRecord();
             return record.value;
         }
+
+        public void ReloadFromSources() => TryResolveVersionIncompatibilities(this);
+
+        public void Apply()
+        {
+            foreach (SourceSerializer sourceSerializer in _adapters)
+            {
+                sourceSerializer.SaveValue();
+            }
+        }
     }
 }

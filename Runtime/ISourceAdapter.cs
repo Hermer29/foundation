@@ -4,5 +4,6 @@
     {
         void SetValue(string value);
         string GetValue();
+        void Save();
     }
 }

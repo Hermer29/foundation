@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using Hermer29.Foundation.Tests.Tests.Runtime;
+using NUnit.Framework;
 using Tests.Runtime;
 
 namespace Hermer29.Foundation.Tests.Runtime
@@ -39,6 +40,23 @@ namespace Hermer29.Foundation.Tests.Runtime
 
             // assert
             Assert.That(fakeDataA.Record.version == fakeDataB.Record.version);
+        }
+
+        [Test]
+        public void WhenOneSourceIsEmptyAndOtherIsNot_TryCreate_ThenSourcesMustHaveSameData()
+        {
+            // arrange
+            var fakeDataA = new FakeRawDataSource();
+            const string dataB = "BLAHBLAHBLAH";
+            const int versionFromB = 7;
+            var fakeDataB = new FakeDataSource(versionFromB, dataB);
+
+            // act
+            var sources = new ISourceAdapter[] { fakeDataA, fakeDataB };
+            var save = Create.CreateSave(sources);
+
+            // assert
+            Assert.That(fakeDataA.GetValue() == fakeDataB.GetValue());
         }
     }
 }

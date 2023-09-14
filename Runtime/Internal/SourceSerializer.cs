@@ -14,8 +14,9 @@ namespace Hermer29.Foundation.Internal
 
         public SavedRecord GetRecord()
         {
-            var raw = _adapter.GetValue();
-            if (string.IsNullOrEmpty(raw))
+            string raw = _adapter.GetValue();
+            
+            if (string.IsNullOrEmpty(raw) || string.IsNullOrWhiteSpace(raw))
             {
                 return new SavedRecord();
             }
@@ -33,5 +34,10 @@ namespace Hermer29.Foundation.Internal
         }
 
         public void SetRecord(SavedRecord record) => _adapter.SetValue(JsonUtility.ToJson(record));
+
+        public void SaveValue()
+        {
+            _adapter.Save();
+        }
     }
 }
